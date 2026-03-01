@@ -2,32 +2,41 @@
 /**
  * Write a description of class Motor here.
  * 
- * @author (your name) 
+ * @author (your name)
  * @version (a version number or a date)
  */
-public abstract class Motor
-{
-    // instance variables - replace the example below with your own
-    private int x;
+public abstract class Motor {
+    private double cilindrada;
+    private double potencia;
+    private int numCilindros;
 
-    /**
-     * Constructor for objects of class Motor
-     */
-    public Motor()
-    {
-        // initialise instance variables
-        x = 0;
+    public Motor(double cilindrada, double potencia, int numCilindros) {
+        this.cilindrada = cilindrada;
+        this.potencia = potencia;
+        this.numCilindros = numCilindros;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void setCilindrada(double cilindrada) {
+        this.cilindrada = cilindrada;
+    }
+
+    public void setPotencia(double potencia) {
+        this.potencia = potencia;
+    }
+
+    public void setNumCilindros(int numCilindros) {
+        this.numCilindros = numCilindros;
+    }
+
+    public double getCilindrada() {
+        return cilindrada;
+    }
+
+    public double getPotencia() {
+        return potencia;
+    }
+
+    public int getNumCilindros() {
+        return numCilindros;
     }
 }

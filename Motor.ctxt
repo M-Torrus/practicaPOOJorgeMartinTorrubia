@@ -1,10 +1,18 @@
 #BlueJ class context
 comment0.target=Motor
-comment0.text=\n\ Write\ a\ description\ of\ class\ Motor\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=Motor()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Motor\n
-comment2.params=y
-comment2.target=int\ sampleMethod(int)
-comment2.text=\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\n\ \n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \n
-numComments=3
+comment0.text=\n\ Write\ a\ description\ of\ class\ Motor\ here.\n\ \n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=cilindrada\ potencia\ numCilindros
+comment1.target=Motor(double,\ double,\ int)
+comment2.params=cilindrada
+comment2.target=void\ setCilindrada(double)
+comment3.params=potencia
+comment3.target=void\ setPotencia(double)
+comment4.params=numCilindros
+comment4.target=void\ setNumCilindros(int)
+comment5.params=
+comment5.target=double\ getCilindrada()
+comment6.params=
+comment6.target=double\ getPotencia()
+comment7.params=
+comment7.target=int\ getNumCilindros()
+numComments=8
