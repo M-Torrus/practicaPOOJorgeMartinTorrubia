@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Rueda
+comment0.text=\n\ Write\ a\ description\ of\ class\ Rueda\ here.\n\ \n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=anchoMilimetros\ diametroLlantaPulgadas\ cargaKG\ codVelocidadKMPorHora
+comment1.target=Rueda(double,\ double,\ double,\ double)
+comment2.params=
+comment2.target=double\ getAnchoMilimetros()
+comment3.params=anchoMilimetros
+comment3.target=void\ setAnchoMilimetros(double)
+comment4.params=
+comment4.target=double\ getDiametroLlantaPulgadas()
+comment5.params=diametroLlantaPulgadas
+comment5.target=void\ setDiametroLlantaPulgadas(double)
+comment6.params=
+comment6.target=double\ getCargaKG()
+comment7.params=cargaKG
+comment7.target=void\ setCargaKG(double)
+comment8.params=
+comment8.target=double\ getCodVelocidadKMPorHora()
+comment9.params=codVelocidadKMPorHora
+comment9.target=void\ setCodVelocidadKMPorHora(double)
+numComments=10

@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=TapiceriaAlcantara
+comment0.text=\n\ Write\ a\ description\ of\ class\ TapiceriaAlcantara\ here.\n\ \n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=color\ metrosCuadrados
+comment1.target=TapiceriaAlcantara(java.lang.String,\ double)
+numComments=2
