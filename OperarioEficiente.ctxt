@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=OperarioEficiente
+comment0.text=\n\ Write\ a\ description\ of\ class\ OperarioEficiente\ here.\n\ \n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=nombre\ DNI\ direcci\u00F3n\ numSeguridadSocial\ puesto\ salario\ fechaIngreso
+comment1.target=OperarioEficiente(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ double,\ java.lang.String)
+numComments=2
