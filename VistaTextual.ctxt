@@ -1,10 +1,13 @@
 #BlueJ class context
 comment0.target=VistaTextual
-comment0.text=\n\ Write\ a\ description\ of\ class\ VistaTextual\ here.\n\ \n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Vista\ textual\ del\ dashboard.\ Muestra\ el\ estado\ del\ sistema\ por\ consola.\n\ Implementa\ la\ interfaz\ IVisualizacion\ para\ mantener\ el\ desacoplamiento\ con\ Dashboard.\n\ La\ implementaci\u00F3n\ completa\ se\ realiza\ en\ el\ Nivel\ 3.\n\n\ @author\ Jorge\ Mart\u00EDn\ Torrubia\n\ @version\ 1.0\n
 comment1.params=
 comment1.target=VistaTextual()
+comment1.text=\n\ Constructor\ de\ VistaTextual.\n
 comment2.params=
 comment2.target=void\ mostrar()
+comment2.text=\n\ Muestra\ el\ estado\ actual\ del\ sistema\ por\ la\ consola.\n
 comment3.params=
 comment3.target=void\ actualizar()
+comment3.text=\n\ Actualiza\ la\ vista\ con\ los\ datos\ m\u00E1s\ recientes\ del\ sistema.\n
 numComments=4

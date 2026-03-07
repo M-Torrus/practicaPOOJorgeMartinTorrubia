@@ -1,8 +1,6 @@
-# Memoria — Práctica de Programación Orientada a Objetos (2025-2026)
+# Memoria - Práctica de Programación Orientada a Objetos
 
-## Portada
-
-- **Título:** Práctica de Programación Orientada a Objetos – Curso 2025-2026
+- Jorge Martín Torrubia
 - **Nombre:** [Tu nombre]
 - **Apellidos:** [Tus apellidos]
 - **Correo electrónico:** [Tu email]
