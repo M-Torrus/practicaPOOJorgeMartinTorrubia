@@ -1,15 +1,21 @@
-
 /**
- * Write a description of class RuedaTodoterreno here.
- * 
- * @author (your name)
- * @version (a version number or a date)
+ * Rueda todoterreno, diseñada para terrenos irregulares con mayor índice de carga.
+ *
+ * @author Jorge Martín Torrubia
+ * @version 1.0
  */
 public class RuedaTodoterreno extends Rueda {
 
-    public RuedaTodoterreno(double anchoMilimetros, double diametroLlantaPulgadas, double cargaKG,
-            double codVelocidadKMPorHora) {
-        super(anchoMilimetros, diametroLlantaPulgadas, cargaKG, codVelocidadKMPorHora);
+    /**
+     * Constructor de RuedaTodoterreno.
+     *
+     * @param anchoMilimetros        Ancho del neumático en mm.
+     * @param diametroLlantaPulgadas Diámetro de la llanta en pulgadas.
+     * @param indiceCarga            Índice de carga en kg.
+     * @param codigoVelocidad        Velocidad máxima admitida en km/h.
+     */
+    public RuedaTodoterreno(double anchoMilimetros, double diametroLlantaPulgadas,
+                            double indiceCarga, double codigoVelocidad) {
+        super(anchoMilimetros, diametroLlantaPulgadas, indiceCarga, codigoVelocidad);
     }
-
 }

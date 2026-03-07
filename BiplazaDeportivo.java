@@ -1,20 +1,20 @@
-
 /**
- * Write a description of class BiplazaDeportivo here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Vehículo deportivo de dos plazas. El número de plazas es fijo (2)
+ * y se establece automáticamente en el constructor.
+ *
+ * @author Jorge Martín Torrubia
+ * @version 1.0
  */
-public class BiplazaDeportivo extends Vehiculo
-{
+public class BiplazaDeportivo extends Vehiculo {
 
     /**
-     * Constructor for objects of class BiplazaDeportivo
+     * Constructor de BiplazaDeportivo. Las plazas quedan fijadas a 2.
+     *
+     * @param color             Color de la carrocería.
+     * @param tara              Peso en vacío en kg.
+     * @param pesoMaxAutorizado Peso máximo autorizado en kg.
      */
-    // Podriamos poner 2 plazas fijas en esta clase, pero el enunciado de la practica no especifica si sera asi
-    
-    public BiplazaDeportivo(String color, int numPlazas, double tara, double pesoMax)
-    {
-        super(color, numPlazas, tara, pesoMax);
+    public BiplazaDeportivo(String color, double tara, double pesoMaxAutorizado) {
+        super(color, 2, tara, pesoMaxAutorizado);
     }
 }

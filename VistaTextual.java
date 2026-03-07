@@ -1,20 +1,30 @@
-
 /**
- * Write a description of class VistaTextual here.
- * 
- * @author (your name)
- * @version (a version number or a date)
+ * Vista textual del dashboard. Muestra el estado del sistema por consola.
+ * Implementa la interfaz IVisualizacion para mantener el desacoplamiento con Dashboard.
+ * La implementación completa se realiza en el Nivel 3.
+ *
+ * @author Jorge Martín Torrubia
+ * @version 1.0
  */
 public class VistaTextual implements IVisualizacion {
 
+    /**
+     * Constructor de VistaTextual.
+     */
     public VistaTextual() {
     }
 
+    /**
+     * Muestra el estado actual del sistema por la consola.
+     */
     @Override
     public void mostrar() {
         // TODO: Nivel 3
     }
 
+    /**
+     * Actualiza la vista con los datos más recientes del sistema.
+     */
     @Override
     public void actualizar() {
         // TODO: Nivel 3

@@ -1,54 +1,102 @@
-
 /**
- * Write a description of class Rueda here.
- * 
- * @author (your name)
- * @version (a version number or a date)
+ * Clase abstracta que representa una rueda genérica de vehículo.
+ * Define los atributos comunes: ancho, diámetro de llanta,
+ * índice de carga y código de velocidad.
+ *
+ * @author Jorge Martín Torrubia
+ * @version 1.0
  */
 public abstract class Rueda {
     private double anchoMilimetros;
     private double diametroLlantaPulgadas;
-    private double cargaKG;
-    private double codVelocidadKMPorHora;
+    private double indiceCarga;
+    private double codigoVelocidad;
 
-    public Rueda(double anchoMilimetros, double diametroLlantaPulgadas, double cargaKG,
-            double codVelocidadKMPorHora) {
+    /**
+     * Constructor de Rueda.
+     *
+     * @param anchoMilimetros       Ancho del neumático en mm.
+     * @param diametroLlantaPulgadas Diámetro de la llanta en pulgadas.
+     * @param indiceCarga           Índice de carga máxima en kg.
+     * @param codigoVelocidad       Velocidad máxima admitida en km/h.
+     */
+    public Rueda(double anchoMilimetros, double diametroLlantaPulgadas,
+                 double indiceCarga, double codigoVelocidad) {
         this.anchoMilimetros = anchoMilimetros;
         this.diametroLlantaPulgadas = diametroLlantaPulgadas;
-        this.cargaKG = cargaKG;
-        this.codVelocidadKMPorHora = codVelocidadKMPorHora;
+        this.indiceCarga = indiceCarga;
+        this.codigoVelocidad = codigoVelocidad;
     }
 
+    /**
+     * Obtiene el ancho del neumático.
+     *
+     * @return Ancho en mm.
+     */
     public double getAnchoMilimetros() {
         return anchoMilimetros;
     }
 
+    /**
+     * Establece el ancho del neumático.
+     *
+     * @param anchoMilimetros Nuevo ancho en mm.
+     */
     public void setAnchoMilimetros(double anchoMilimetros) {
         this.anchoMilimetros = anchoMilimetros;
     }
 
+    /**
+     * Obtiene el diámetro de la llanta.
+     *
+     * @return Diámetro en pulgadas.
+     */
     public double getDiametroLlantaPulgadas() {
         return diametroLlantaPulgadas;
     }
 
+    /**
+     * Establece el diámetro de la llanta.
+     *
+     * @param diametroLlantaPulgadas Nuevo diámetro en pulgadas.
+     */
     public void setDiametroLlantaPulgadas(double diametroLlantaPulgadas) {
         this.diametroLlantaPulgadas = diametroLlantaPulgadas;
     }
 
-    public double getCargaKG() {
-        return cargaKG;
+    /**
+     * Obtiene el índice de carga de la rueda.
+     *
+     * @return Índice de carga en kg.
+     */
+    public double getIndiceCarga() {
+        return indiceCarga;
     }
 
-    public void setCargaKG(double cargaKG) {
-        this.cargaKG = cargaKG;
+    /**
+     * Establece el índice de carga de la rueda.
+     *
+     * @param indiceCarga Nuevo índice de carga en kg.
+     */
+    public void setIndiceCarga(double indiceCarga) {
+        this.indiceCarga = indiceCarga;
     }
 
-    public double getCodVelocidadKMPorHora() {
-        return codVelocidadKMPorHora;
+    /**
+     * Obtiene el código de velocidad máxima admitida.
+     *
+     * @return Velocidad máxima en km/h.
+     */
+    public double getCodigoVelocidad() {
+        return codigoVelocidad;
     }
 
-    public void setCodVelocidadKMPorHora(double codVelocidadKMPorHora) {
-        this.codVelocidadKMPorHora = codVelocidadKMPorHora;
+    /**
+     * Establece el código de velocidad máxima admitida.
+     *
+     * @param codigoVelocidad Nueva velocidad máxima en km/h.
+     */
+    public void setCodigoVelocidad(double codigoVelocidad) {
+        this.codigoVelocidad = codigoVelocidad;
     }
-
 }
