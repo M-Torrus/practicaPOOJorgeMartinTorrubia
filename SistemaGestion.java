@@ -28,7 +28,7 @@ public class SistemaGestion {
         cadenas[0] = new CadenaMontaje("BiplazaDeportivo");
         cadenas[1] = new CadenaMontaje("Turismo");
         cadenas[2] = new CadenaMontaje("Furgoneta");
-        this.planificador = new Planificador(cadenas);
+        this.planificador = new Planificador(cadenas, almacen);
         this.trabajadores = new ArrayList<>();
     }
 
@@ -120,5 +120,63 @@ public class SistemaGestion {
      */
     public void setTrabajadores(ArrayList<Trabajador> trabajadores) {
         this.trabajadores = trabajadores;
+    }
+
+    /**
+     * Da de alta un trabajador en el sistema.
+     *
+     * @param trabajador Trabajador a registrar.
+     */
+    public void altaTrabajador(Trabajador trabajador) {
+        trabajadores.add(trabajador);
+    }
+
+    /**
+     * Busca trabajadores cuyo nombre o apellidos contengan el texto indicado
+     * (sin distinción de mayúsculas/minúsculas).
+     *
+     * @param nombre Texto a buscar en nombre o apellidos.
+     * @return Lista de trabajadores que coinciden con la búsqueda.
+     */
+    public ArrayList<Trabajador> buscarPorNombre(String nombre) {
+        ArrayList<Trabajador> resultado = new ArrayList<>();
+        String busqueda = nombre.toLowerCase();
+        for (Trabajador t : trabajadores) {
+            if (t.getNombre().toLowerCase().contains(busqueda)
+                    || t.getApellidos().toLowerCase().contains(busqueda)) {
+                resultado.add(t);
+            }
+        }
+        return resultado;
+    }
+
+    /**
+     * Busca un trabajador por su DNI.
+     *
+     * @param dni DNI a buscar.
+     * @return Trabajador encontrado, o null si no existe.
+     */
+    public Trabajador buscarPorDNI(String dni) {
+        for (Trabajador t : trabajadores) {
+            if (t.getDNI().equalsIgnoreCase(dni)) return t;
+        }
+        return null;
+    }
+
+    /**
+     * Busca trabajadores por tipo de perfil (nombre simple de la clase).
+     * Ejemplos: "OperarioEficiente", "GestorDePlanta", "MecanicoCintaEstandar".
+     *
+     * @param tipo Nombre simple de la clase del perfil buscado.
+     * @return Lista de trabajadores del tipo indicado.
+     */
+    public ArrayList<Trabajador> buscarPorTipo(String tipo) {
+        ArrayList<Trabajador> resultado = new ArrayList<>();
+        for (Trabajador t : trabajadores) {
+            if (t.getClass().getSimpleName().equalsIgnoreCase(tipo)) {
+                resultado.add(t);
+            }
+        }
+        return resultado;
     }
 }

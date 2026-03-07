@@ -23,11 +23,16 @@ public class Robot {
 
     /**
      * Ejecuta el montaje del componente asignado sobre el vehículo en construcción.
-     * El tiempo de montaje depende del tipo de operario asignado.
-     * La implementación completa se realiza en el Nivel 2.
+     * El operario realiza la tarea y el robot espera el tiempo correspondiente
+     * (1 segundo para OperarioEficiente, 3 segundos para OperarioEstandar).
      */
     public void montarComponente() {
-        // TODO: Nivel 2
+        int tiempo = operario.realizarTarea();
+        try {
+            Thread.sleep(tiempo * 1000L);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 
     /**
