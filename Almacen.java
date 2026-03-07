@@ -5,29 +5,67 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Almacen
-{
-    // instance variables - replace the example below with your own
-    private int x;
 
-    /**
-     * Constructor for objects of class Almacen
-     */
-    public Almacen()
-    {
-        // initialise instance variables
-        x = 0;
+import java.util.ArrayList;
+
+public class Almacen implements IAlmacen {
+    private ArrayList<Motor> motores;
+    private ArrayList<Tapiceria> tapicerias;
+    private ArrayList<Rueda> ruedas;
+    private ArrayList<Vehiculo> vehiculos;
+
+    public Almacen() {
+        motores = new ArrayList<>();
+        tapicerias = new ArrayList<>();
+        ruedas = new ArrayList<>();
+        vehiculos = new ArrayList<>();
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    @Override
+    public void añadir(Object elemento) {
+        // TODO: Nivel 2
+    }
+
+    @Override
+    public Object consultar(String tipo) {
+        // TODO: Nivel 2
+        return null;
+    }
+
+    @Override
+    public void actualizar(Object elemento) {
+        // TODO: Nivel 2
+    }
+
+    public ArrayList<Motor> getMotores() {
+        return motores;
+    }
+
+    public void setMotores(ArrayList<Motor> motores) {
+        this.motores = motores;
+    }
+
+    public ArrayList<Tapiceria> getTapicerias() {
+        return tapicerias;
+    }
+
+    public void setTapicerias(ArrayList<Tapiceria> tapicerias) {
+        this.tapicerias = tapicerias;
+    }
+
+    public ArrayList<Rueda> getRuedas() {
+        return ruedas;
+    }
+
+    public void setRuedas(ArrayList<Rueda> ruedas) {
+        this.ruedas = ruedas;
+    }
+
+    public ArrayList<Vehiculo> getVehiculos() {
+        return vehiculos;
+    }
+
+    public void setVehiculos(ArrayList<Vehiculo> vehiculos) {
+        this.vehiculos = vehiculos;
     }
 }

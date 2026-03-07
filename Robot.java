@@ -2,32 +2,35 @@
 /**
  * Write a description of class Robot here.
  * 
- * @author (your name) 
+ * @author (your name)
  * @version (a version number or a date)
  */
-public class Robot
-{
-    // instance variables - replace the example below with your own
-    private int x;
+public class Robot {
+    private String componente;
+    private Operario operario;
 
-    /**
-     * Constructor for objects of class Robot
-     */
-    public Robot()
-    {
-        // initialise instance variables
-        x = 0;
+    public Robot(String componente, Operario operario) {
+        this.componente = componente;
+        this.operario = operario;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void montarComponente() {
+        // TODO: Nivel 2
+    }
+
+    public String getComponente() {
+        return componente;
+    }
+
+    public void setComponente(String componente) {
+        this.componente = componente;
+    }
+
+    public Operario getOperario() {
+        return operario;
+    }
+
+    public void setOperario(Operario operario) {
+        this.operario = operario;
     }
 }

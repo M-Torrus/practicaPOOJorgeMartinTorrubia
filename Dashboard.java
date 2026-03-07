@@ -2,32 +2,33 @@
 /**
  * Write a description of class Dashboard here.
  * 
- * @author (your name) 
+ * @author (your name)
  * @version (a version number or a date)
  */
-public class Dashboard
-{
-    // instance variables - replace the example below with your own
-    private int x;
+public class Dashboard {
+    private IVisualizacion visualizador;
 
-    /**
-     * Constructor for objects of class Dashboard
-     */
-    public Dashboard()
-    {
-        // initialise instance variables
-        x = 0;
+    public Dashboard(IVisualizacion visualizador) {
+        this.visualizador = visualizador;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void mostrarEstadoCadenas() {
+        // TODO: Nivel 3
+    }
+
+    public void mostrarEstadoAlmacen() {
+        // TODO: Nivel 3
+    }
+
+    public void actualizarVista() {
+        visualizador.actualizar();
+    }
+
+    public IVisualizacion getVisualizador() {
+        return visualizador;
+    }
+
+    public void setVisualizador(IVisualizacion visualizador) {
+        this.visualizador = visualizador;
     }
 }

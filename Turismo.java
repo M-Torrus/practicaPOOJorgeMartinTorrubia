@@ -5,7 +5,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Turismo extends Vehículo
+public class Turismo extends Vehiculo
 {
 
     /**

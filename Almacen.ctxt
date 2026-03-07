@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Almacen
+comment1.params=
+comment1.target=Almacen()
+comment10.params=ruedas
+comment10.target=void\ setRuedas(java.util.ArrayList)
+comment11.params=
+comment11.target=java.util.ArrayList\ getVehiculos()
+comment12.params=vehiculos
+comment12.target=void\ setVehiculos(java.util.ArrayList)
+comment2.params=elemento
+comment2.target=void\ a\u00F1adir(java.lang.Object)
+comment3.params=tipo
+comment3.target=java.lang.Object\ consultar(java.lang.String)
+comment4.params=elemento
+comment4.target=void\ actualizar(java.lang.Object)
+comment5.params=
+comment5.target=java.util.ArrayList\ getMotores()
+comment6.params=motores
+comment6.target=void\ setMotores(java.util.ArrayList)
+comment7.params=
+comment7.target=java.util.ArrayList\ getTapicerias()
+comment8.params=tapicerias
+comment8.target=void\ setTapicerias(java.util.ArrayList)
+comment9.params=
+comment9.target=java.util.ArrayList\ getRuedas()
+numComments=13

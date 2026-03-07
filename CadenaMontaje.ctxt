@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=CadenaMontaje
+comment0.text=\n\ Write\ a\ description\ of\ class\ CadenaMontaje\ here.\n\ \n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=java.lang.String\ getTipoVehiculo()
+comment10.params=estado
+comment10.target=void\ setEstado(java.lang.String)
+comment11.params=tipoVehiculo
+comment11.target=CadenaMontaje(java.lang.String)
+comment2.params=tipoVehiculo
+comment2.target=void\ setTipoVehiculo(java.lang.String)
+comment3.params=
+comment3.target=Robot[]\ getRobots()
+comment4.params=robots
+comment4.target=void\ setRobots(Robot[])
+comment5.params=
+comment5.target=Operario[]\ getOperarios()
+comment6.params=operarios
+comment6.target=void\ setOperarios(Operario[])
+comment7.params=
+comment7.target=Vehiculo\ getVehiculoEnConstruccion()
+comment8.params=vehiculoEnConstruccion
+comment8.target=void\ setVehiculoEnConstruccion(Vehiculo)
+comment9.params=
+comment9.target=java.lang.String\ getEstado()
+numComments=12

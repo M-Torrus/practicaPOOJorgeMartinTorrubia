@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Dashboard
+comment0.text=\n\ Write\ a\ description\ of\ class\ Dashboard\ here.\n\ \n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=visualizador
+comment1.target=Dashboard(IVisualizacion)
+comment2.params=
+comment2.target=void\ mostrarEstadoCadenas()
+comment3.params=
+comment3.target=void\ mostrarEstadoAlmacen()
+comment4.params=
+comment4.target=void\ actualizarVista()
+comment5.params=
+comment5.target=IVisualizacion\ getVisualizador()
+comment6.params=visualizador
+comment6.target=void\ setVisualizador(IVisualizacion)
+numComments=7

@@ -1,11 +1,11 @@
 
 /**
- * Write a description of class Vehículo here.
+ * Write a description of class Vehiculo here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public abstract class Vehículo
+public abstract class Vehiculo
 {
     private String color;
     private int numPlazas;
@@ -13,9 +13,9 @@ public abstract class Vehículo
     private double pesoMax;
 
     /**
-     * Constructor for objects of class Vehículo
+     * Constructor for objects of class Vehiculo
      */
-    public Vehículo(String color, int numPlazas, double tara, double pesoMax)
+    public Vehiculo(String color, int numPlazas, double tara, double pesoMax)
     {
         // initialise instance variables
         this.color = color;
