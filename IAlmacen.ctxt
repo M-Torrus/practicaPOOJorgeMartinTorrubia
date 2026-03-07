@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=IAlmacen
-comment0.text=\n\ Interfaz\ para\ comunicarse\ con\ el\ almacen\ de\ datos,\ desacopla\ el\ \n\ sistema\ de\ gesti\u00F3n\ con\ la\ implementaci\u00F3n\ concreta\ Almacen.\n\n\ @author\ Jorge\ Mart\u00EDn\ Torrubia\n\ @version\ 1.0\n
+comment0.text=\n\ Interfaz\ para\ comunicarse\ con\ el\ almac\u00E9n\ de\ datos.\ Desacopla\ el\n\ sistema\ de\ gesti\u00F3n\ de\ la\ implementaci\u00F3n\ concreta\ AlmacenDatos.\n\n\ @author\ Jorge\ Mart\u00EDn\ Torrubia\n\ @version\ 1.0\n
 comment1.params=elemento
 comment1.target=void\ a\u00F1adir(java.lang.Object)
 comment1.text=\n\ A\u00F1ade\ un\ elemento\ al\ almac\u00E9n.\n\n\ @param\ elemento\ Objeto\ a\ almacenar.\n

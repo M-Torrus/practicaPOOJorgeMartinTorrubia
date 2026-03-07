@@ -2,9 +2,8 @@ import java.util.ArrayList;
 
 /**
  * Sistema central de gestión de la fábrica de vehículos.
- * Agrupa y coordina las tres cadenas de montaje, el almacén, el dashboard,
- * el planificador y la lista de trabajadores. Es el punto de entrada
- * a todas las funcionalidades del sistema.
+ * Coordina las tres cadenas de montaje, el almacén de datos, el dashboard
+ * y el planificador. Es el punto de entrada a todas las funcionalidades del sistema.
  *
  * @author Jorge Martín Torrubia
  * @version 1.0
@@ -14,12 +13,11 @@ public class SistemaGestion {
     private IAlmacen almacen;
     private Dashboard dashboard;
     private Planificador planificador;
-    private ArrayList<Trabajador> trabajadores;
 
     /**
      * Constructor de SistemaGestion. Inicializa las tres cadenas de montaje
-     * (BiplazaDeportivo, Turismo y Furgoneta), el almacén, el dashboard,
-     * el planificador y la lista de trabajadores.
+     * (BiplazaDeportivo, Turismo y Furgoneta), el almacén de datos, el dashboard
+     * y el planificador.
      */
     public SistemaGestion() {
         this.almacen = new AlmacenDatos();
@@ -29,7 +27,6 @@ public class SistemaGestion {
         cadenas[1] = new CadenaMontaje("Turismo");
         cadenas[2] = new CadenaMontaje("Furgoneta");
         this.planificador = new Planificador(cadenas, almacen);
-        this.trabajadores = new ArrayList<>();
     }
 
     /**
@@ -109,26 +106,18 @@ public class SistemaGestion {
      *
      * @return Lista de trabajadores.
      */
+    @SuppressWarnings("unchecked")
     public ArrayList<Trabajador> getTrabajadores() {
-        return trabajadores;
+        return (ArrayList<Trabajador>) almacen.consultar("trabajador");
     }
 
     /**
-     * Establece la lista de trabajadores del sistema.
-     *
-     * @param trabajadores Nueva lista de trabajadores.
-     */
-    public void setTrabajadores(ArrayList<Trabajador> trabajadores) {
-        this.trabajadores = trabajadores;
-    }
-
-    /**
-     * Da de alta un trabajador en el sistema.
+     * Da de alta un trabajador en el sistema (lo almacena en el almacén de datos).
      *
      * @param trabajador Trabajador a registrar.
      */
     public void altaTrabajador(Trabajador trabajador) {
-        trabajadores.add(trabajador);
+        almacen.añadir(trabajador);
     }
 
     /**
@@ -141,7 +130,7 @@ public class SistemaGestion {
     public ArrayList<Trabajador> buscarPorNombre(String nombre) {
         ArrayList<Trabajador> resultado = new ArrayList<>();
         String busqueda = nombre.toLowerCase();
-        for (Trabajador t : trabajadores) {
+        for (Trabajador t : getTrabajadores()) {
             if (t.getNombre().toLowerCase().contains(busqueda)
                     || t.getApellidos().toLowerCase().contains(busqueda)) {
                 resultado.add(t);
@@ -157,7 +146,7 @@ public class SistemaGestion {
      * @return Trabajador encontrado, o null si no existe.
      */
     public Trabajador buscarPorDNI(String dni) {
-        for (Trabajador t : trabajadores) {
+        for (Trabajador t : getTrabajadores()) {
             if (t.getDNI().equalsIgnoreCase(dni)) return t;
         }
         return null;
@@ -172,7 +161,7 @@ public class SistemaGestion {
      */
     public ArrayList<Trabajador> buscarPorTipo(String tipo) {
         ArrayList<Trabajador> resultado = new ArrayList<>();
-        for (Trabajador t : trabajadores) {
+        for (Trabajador t : getTrabajadores()) {
             if (t.getClass().getSimpleName().equalsIgnoreCase(tipo)) {
                 resultado.add(t);
             }

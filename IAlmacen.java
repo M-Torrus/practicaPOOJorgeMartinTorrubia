@@ -1,6 +1,6 @@
 /**
- * Interfaz para comunicarse con el almacen de datos, desacopla el 
- * sistema de gestión con la implementación concreta Almacen.
+ * Interfaz para comunicarse con el almacén de datos. Desacopla el
+ * sistema de gestión de la implementación concreta AlmacenDatos.
  *
  * @author Jorge Martín Torrubia
  * @version 1.0

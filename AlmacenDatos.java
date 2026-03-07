@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 
 /**
- * Clase AlmacenDatos de datos, se encarga de los datos de motores, tapicerías, 
- * ruedas y vehículos en listas independientes, implementa la interfaz IAlmacen para mantener el desacoplamiento con SistemaGestion.
+ * Capa de persistencia del sistema. 
+ * Almacena todas las entidades del sistema: motores, tapicerías, ruedas, vehículos y trabajadores.
+ * Implementa la interfaz IAlmacen para mantener el desacoplamiento con SistemaGestion.
  *
  * @author Jorge Martín Torrubia
  * @version 1.0
@@ -12,6 +13,7 @@ public class AlmacenDatos implements IAlmacen {
     private ArrayList<Tapiceria> tapicerias;
     private ArrayList<Rueda> ruedas;
     private ArrayList<Vehiculo> vehiculos;
+    private ArrayList<Trabajador> trabajadores;
 
     /**
      * Constructor de la clase, inicializa las colecciones vacías.
@@ -21,40 +23,44 @@ public class AlmacenDatos implements IAlmacen {
         tapicerias = new ArrayList<>();
         ruedas = new ArrayList<>();
         vehiculos = new ArrayList<>();
+        trabajadores = new ArrayList<>();
     }
 
     /**
-     * Añade un elemento al almacén según su tipo (Motor, Tapiceria, Rueda o Vehiculo).
+     * Añade un elemento al almacén según su tipo (Motor, Tapiceria, Rueda, Vehiculo o Trabajador).
      *
      * @param elemento Objeto a almacenar.
      */
     @Override
     public void añadir(Object elemento) {
-        if (elemento instanceof Motor) {
-            motores.add((Motor) elemento);
+        if (elemento instanceof Motor motor) {
+            motores.add(motor);
         } else if (elemento instanceof Tapiceria) {
             tapicerias.add((Tapiceria) elemento);
         } else if (elemento instanceof Rueda) {
             ruedas.add((Rueda) elemento);
         } else if (elemento instanceof Vehiculo) {
             vehiculos.add((Vehiculo) elemento);
+        } else if (elemento instanceof Trabajador) {
+            trabajadores.add((Trabajador) elemento);
         }
     }
 
     /**
-     * Consulta el stock de un tipo de elemento del almacén.
+     * Consulta los datos de un tipo de entidad del almacén.
      *
-     * @param tipo Identificador del tipo ("motor", "tapiceria", "rueda" o "vehiculo").
+     * @param tipo Identificador del tipo ("motor", "tapiceria", "rueda", "vehiculo" o "trabajador").
      * @return Lista de elementos del tipo indicado, o null si el tipo no existe.
      */
     @Override
     public Object consultar(String tipo) {
         switch (tipo.toLowerCase()) {
-            case "motor":     return motores;
-            case "tapiceria": return tapicerias;
-            case "rueda":     return ruedas;
-            case "vehiculo":  return vehiculos;
-            default:          return null;
+            case "motor":       return motores;
+            case "tapiceria":   return tapicerias;
+            case "rueda":       return ruedas;
+            case "vehiculo":    return vehiculos;
+            case "trabajador":  return trabajadores;
+            default:            return null;
         }
     }
 
@@ -78,6 +84,9 @@ public class AlmacenDatos implements IAlmacen {
         } else if (elemento instanceof Vehiculo) {
             int idx = vehiculos.indexOf(elemento);
             if (idx >= 0) vehiculos.set(idx, (Vehiculo) elemento);
+        } else if (elemento instanceof Trabajador) {
+            int idx = trabajadores.indexOf(elemento);
+            if (idx >= 0) trabajadores.set(idx, (Trabajador) elemento);
         }
     }
 
@@ -151,5 +160,23 @@ public class AlmacenDatos implements IAlmacen {
      */
     public void setVehiculos(ArrayList<Vehiculo> vehiculos) {
         this.vehiculos = vehiculos;
+    }
+
+    /**
+     * Obtiene la lista de trabajadores almacenados.
+     *
+     * @return Lista de trabajadores.
+     */
+    public ArrayList<Trabajador> getTrabajadores() {
+        return trabajadores;
+    }
+
+    /**
+     * Establece la lista de trabajadores del almacén.
+     *
+     * @param trabajadores Nueva lista de trabajadores.
+     */
+    public void setTrabajadores(ArrayList<Trabajador> trabajadores) {
+        this.trabajadores = trabajadores;
     }
 }
