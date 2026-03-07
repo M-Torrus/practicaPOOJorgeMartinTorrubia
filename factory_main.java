@@ -48,34 +48,43 @@ public class factory_main {
      * Submenú de gestión de trabajadores.
      */
     private static void menuTrabajadores() {
-        System.out.println("\n-- TRABAJADORES --");
-        System.out.println("1. Dar de alta trabajador");
-        System.out.println("2. Buscar por nombre / apellidos");
-        System.out.println("3. Buscar por DNI");
-        System.out.println("4. Buscar por tipo de perfil");
-        System.out.println("5. Listar todos");
-        System.out.print("Opción: ");
-        switch (leerEntero()) {
-            case 1: altaTrabajador();    break;
-            case 2: buscarPorNombre();   break;
-            case 3: buscarPorDNI();      break;
-            case 4: buscarPorTipo();     break;
-            case 5: listarTrabajadores(); break;
-            default: System.out.println("Opción no válida.");
-        }
+        int opcion;
+        do {
+            System.out.println("\n-- TRABAJADORES --");
+            System.out.println("1. Dar de alta trabajador");
+            System.out.println("2. Buscar por nombre / apellidos");
+            System.out.println("3. Buscar por DNI");
+            System.out.println("4. Buscar por tipo de perfil");
+            System.out.println("5. Listar todos");
+            System.out.println("0. Volver");
+            System.out.print("Opción: ");
+            opcion = leerEntero();
+            switch (opcion) {
+                case 1: altaTrabajador();     break;
+                case 2: buscarPorNombre();    break;
+                case 3: buscarPorDNI();       break;
+                case 4: buscarPorTipo();      break;
+                case 5: listarTrabajadores(); break;
+                case 0: break;
+                default: System.out.println("Opción no válida.");
+            }
+        } while (opcion != 0);
     }
 
     /**
      * Da de alta un nuevo trabajador solicitando sus datos por consola.
+     * Los nuevos empleados se incorporan siempre con experiencia cero,
+     * por lo que operarios y mecánicos se crean en su perfil estándar.
+     * El perfil eficiente se adquiere tras superar el umbral de experiencia
+     * definido por el sistema (> 10 montajes para operarios, > 20 reparaciones
+     * para mecánicos de cinta).
      */
     private static void altaTrabajador() {
         System.out.println("Tipo de trabajador:");
-        System.out.println("  1. OperarioEficiente");
-        System.out.println("  2. OperarioEstandar");
-        System.out.println("  3. GestorDePlanta");
-        System.out.println("  4. AdministradorSistema");
-        System.out.println("  5. MecanicoCintaEficiente");
-        System.out.println("  6. MecanicoCintaEstandar");
+        System.out.println("  1. Operario");
+        System.out.println("  2. GestorDePlanta");
+        System.out.println("  3. AdministradorSistema");
+        System.out.println("  4. MecanicoCinta");
         System.out.print("Tipo: ");
         int tipo = leerEntero();
 
@@ -97,12 +106,10 @@ public class factory_main {
 
         Trabajador t = null;
         switch (tipo) {
-            case 1: t = new OperarioEficiente(nombre, apellidos, dni, direccion, nss, puesto, salario, fecha); break;
-            case 2: t = new OperarioEstandar(nombre, apellidos, dni, direccion, nss, puesto, salario, fecha);  break;
-            case 3: t = new GestorDePlanta(nombre, apellidos, dni, direccion, nss, puesto, salario, fecha);    break;
-            case 4: t = new AdministradorSistema(nombre, apellidos, dni, direccion, nss, puesto, salario, fecha); break;
-            case 5: t = new MecanicoCintaEficiente(nombre, apellidos, dni, direccion, nss, puesto, salario, fecha); break;
-            case 6: t = new MecanicoCintaEstandar(nombre, apellidos, dni, direccion, nss, puesto, salario, fecha);  break;
+            case 1: t = new OperarioEstandar(nombre, apellidos, dni, direccion, nss, puesto, salario, fecha);       break;
+            case 2: t = new GestorDePlanta(nombre, apellidos, dni, direccion, nss, puesto, salario, fecha);         break;
+            case 3: t = new AdministradorSistema(nombre, apellidos, dni, direccion, nss, puesto, salario, fecha);   break;
+            case 4: t = new MecanicoCintaEstandar(nombre, apellidos, dni, direccion, nss, puesto, salario, fecha);  break;
             default: System.out.println("Tipo no válido."); return;
         }
         sistema.altaTrabajador(t);
@@ -188,19 +195,27 @@ public class factory_main {
      * Submenú de gestión del almacén.
      */
     private static void menuAlmacen() {
-        System.out.println("\n-- ALMACÉN --");
-        System.out.println("1. Añadir motor");
-        System.out.println("2. Añadir tapicería");
-        System.out.println("3. Añadir rueda");
-        System.out.println("4. Consultar stock");
-        System.out.print("Opción: ");
-        switch (leerEntero()) {
-            case 1: añadirMotor();    break;
-            case 2: añadirTapiceria(); break;
-            case 3: añadirRueda();    break;
-            case 4: consultarStock(); break;
-            default: System.out.println("Opción no válida.");
-        }
+        int opcion;
+        do {
+            System.out.println("\n-- ALMACÉN --");
+            System.out.println("1. Añadir motor");
+            System.out.println("2. Añadir tapicería");
+            System.out.println("3. Añadir rueda");
+            System.out.println("4. Consultar stock");
+            System.out.println("5. Restock para pruebas");
+            System.out.println("0. Volver");
+            System.out.print("Opción: ");
+            opcion = leerEntero();
+            switch (opcion) {
+                case 1: añadirMotor();      break;
+                case 2: añadirTapiceria();  break;
+                case 3: añadirRueda();      break;
+                case 4: consultarStock();   break;
+                case 5: restockPruebas();   break;
+                case 0: break;
+                default: System.out.println("Opción no válida.");
+            }
+        } while (opcion != 0);
     }
 
     /**
@@ -301,6 +316,20 @@ public class factory_main {
                         + " (" + v.getColor() + ") — " + v.getEstado());
             }
         }
+    }
+
+    /**
+     * Añade al almacén 3 motores, 3 tapicerías y 3 ruedas con valores por defecto
+     * para facilitar las pruebas sin tener que introducir datos manualmente.
+     */
+    private static void restockPruebas() {
+        IAlmacen almacen = sistema.getAlmacen();
+        for (int i = 0; i < 3; i++) {
+            almacen.añadir(new MotorGasolina(1600.0, 120.0, 4));
+            almacen.añadir(new TapiceriaTela("gris", 4.5));
+            almacen.añadir(new RuedaNormal(205.0, 16.0, 500.0, 210.0));
+        }
+        System.out.println("Restock completado: 3 motores, 3 tapicerías y 3 ruedas añadidos.");
     }
 
     // -------------------------------------------------------------------------
