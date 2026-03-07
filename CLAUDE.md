@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Práctica obligatoria de **Programación Orientada a Objetos** (UNED, curso 2025-2026). Simulación de una fábrica de vehículos en Java. Enunciado completo en `Enunciado/ENUNCIADO.md`. Instrucciones de trabajo en `Enunciado/INSTRUCCIONES.md`.
 
+> Los nombres de clases y atributos del enunciado son orientativos (el PDF original no los impone). Los nombres usados en el código son los válidos.
+
 ## Entorno y restricciones
 
 - **IDE:** BlueJ. Estructura plana: **todos los `.java` en el mismo directorio**, sin paquetes.
@@ -34,7 +36,7 @@ Los niveles son **secuenciales y acumulativos**. No avanzar al siguiente sin com
 
 ## Arquitectura del sistema
 
-### Jerarquías de herencia
+### Jerarquías de herencia (nombres en el código)
 
 - `Vehiculo` (abstracta) → `BiplazaDeportivo`, `Turismo`, `Furgoneta`
 - `Motor` (abstracta) → `MotorElectrico`, `MotorGasolina`, `MotorHibrido`
@@ -44,25 +46,39 @@ Los niveles son **secuenciales y acumulativos**. No avanzar al siguiente sin com
 - `Trabajador` → `GestorDePlanta`, `AdministradorSistema`
 - `Trabajador` → `MecanicoCinta` (abstracta) → `MecanicoCintaEficiente`, `MecanicoCintaEstandar`
 
+### Atributos clave
+
+**Vehiculo:** `color`, `numPlazas`, `tara`, `pesoMaxAutorizado`, `estado` (EstadoVehiculo), `motor`, `tapiceria`, `ruedas` — los tres últimos `null` hasta ser ensamblados.
+
+**Trabajador:** `nombre`, `apellidos`, `DNI`, `direccion`, `numSeguridadSocial`, `puesto`, `salario`, `fechaIngreso` (`java.util.Date` — requiere `import java.util.Date` en Trabajador y todas sus subclases).
+
+**Operario:** `montajesRealizados`, `realizarTarea()` → `int`. `OperarioEficiente` → 1s; `OperarioEstandar` → 3s. Las cadenas **no avanzan al unísono** si hay mezcla de tipos.
+
+**MecanicoCinta:** `reparacionesRealizadas`, `repararCinta()` → `int`. `MecanicoCintaEficiente` → 1s; `MecanicoCintaEstandar` → 2-5s aleatorio (`Math.random()`).
+
+**GestorDePlanta:** `configurarCadena(CadenaMontaje)`. Monitoriza planta, configura componentes, avisa mecánicos ante averías.
+
+**AdministradorSistema:** `restaurarSistema()`. Ante un apagón, **todos los trabajadores permanecen quietos** hasta restaurar: 2s sistema de gestión + 3s cadenas.
+
 ### Interfaces y desacoplamiento clave
 
 - `IAlmacen` ← `Almacen`: `SistemaGestion` trabaja con `IAlmacen`, nunca con `Almacen` directamente.
 - `IVisualizacion` ← `VistaTextual`: `Dashboard` trabaja con `IVisualizacion`, nunca con `VistaTextual` directamente.
 
-### Relaciones de composición
-
-`Vehiculo` tiene: `Motor`, `Tapiceria`, `Rueda` (todos `null` hasta ser ensamblados), `EstadoVehiculo` (enum: CHASIS→MOTOR→TAPICERIA→RUEDAS).
-
 ### Sistema de gestión
 
 `factory_main` → crea `SistemaGestion`, que contiene:
 - `CadenaMontaje[3]` (una por tipo de vehículo): cada una tiene `Robot[4]` y `Operario[4]`
-- `IAlmacen` (implementado por `Almacen`)
-- `Dashboard` (usa `IVisualizacion`)
+- `IAlmacen` (implementado por `Almacen`: ArrayLists de motores, tapicerías, ruedas, vehículos)
+- `Dashboard` (usa `IVisualizacion`; muestra estado en cada segundo de simulación)
 - `Planificador` (controla las 3 cadenas, tiene 3 modos de simulación)
 - `ArrayList<Trabajador>`
 
-### Estado de implementación por niveles
+`Robot`: `componente` (String), `operario` (Operario), `montarComponente()`. Un robot por componente: chasis, motor, tapicería, ruedas.
+
+`EstadoVehiculo` (enum): CHASIS → MOTOR → TAPICERIA → RUEDAS.
+
+## Estado de implementación
 
 **Nivel 1 — Completado.** Todas las clases con atributos, constructores, getters/setters y Javadoc.
 
