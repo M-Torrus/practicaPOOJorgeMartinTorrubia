@@ -73,7 +73,7 @@
 | `Robot` | Implementado `montarComponente()` |
 | `Planificador` | Añadido campo `IAlmacen almacen`; implementado `simulacionSimple()` con métodos privados auxiliares `crearVehiculo()` y `crearOperarioAleatorio()` |
 | `SistemaGestion` | Constructor actualizado para pasar `almacen` al `Planificador`; añadidos `altaTrabajador()`, `buscarPorNombre()`, `buscarPorDNI()` y `buscarPorTipo()` |
-| `factory_main` | Menú interactivo completo con `Scanner` |
+| `factory_main` | Punto de entrada que inicializa `SistemaGestion`; la interfaz textual se implementará en el Nivel 3 |
 
 ### Métodos públicos principales
 
@@ -100,7 +100,7 @@
 - **`instanceof` en `añadir`/`actualizar`:** Permite mantener la firma genérica `Object` exigida por `IAlmacen` sin romper el tipado en cada lista interna.
 - **Un hilo por cadena en `simulacionSimple()`:** Refleja fielmente que las cadenas son independientes y no avanzan al unísono cuando los operarios son de distinto tipo (OperarioEficiente tarda 1 s por componente, OperarioEstandar tarda 3 s).
 - **Operarios aleatorios generados internamente:** El planificador crea instancias anónimas de `OperarioEficiente` u `OperarioEstandar` con `Math.random()`, sin depender de la lista de trabajadores registrados, como indica el enunciado para la simulación simple.
-- **`scanner.nextLine()` para toda la entrada:** Evita el clásico problema del salto de línea residual al mezclar `nextInt()` con `nextLine()`, haciendo el menú más robusto.
+
 
 ---
 

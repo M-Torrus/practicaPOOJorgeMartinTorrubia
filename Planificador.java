@@ -136,23 +136,6 @@ public class Planificador {
     }
 
     /**
-     * Ejecuta la simulación compleja: incluye averías en las cintas atendidas por mecánicos.
-     * La implementación completa se realiza en el Nivel 3.
-     */
-    public void simulacionCompleja() {
-        // TODO: Nivel 3
-    }
-
-    /**
-     * Ejecuta la simulación muy compleja: incluye averías, operarios estándar y caída de luz
-     * gestionada por el administrador del sistema.
-     * La implementación completa se realiza en el Nivel 3.
-     */
-    public void simulacionMuyCompleja() {
-        // TODO: Nivel 3
-    }
-
-    /**
      * Obtiene el array de cadenas de montaje controladas por el planificador.
      *
      * @return Array de 3 cadenas de montaje.

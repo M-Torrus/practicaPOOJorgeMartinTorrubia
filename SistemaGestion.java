@@ -18,12 +18,12 @@ public class SistemaGestion {
 
     /**
      * Constructor de SistemaGestion. Inicializa las tres cadenas de montaje
-     * (BiplazaDeportivo, Turismo y Furgoneta), el almacén, el dashboard con
-     * vista textual, el planificador y la lista de trabajadores.
+     * (BiplazaDeportivo, Turismo y Furgoneta), el almacén, el dashboard,
+     * el planificador y la lista de trabajadores.
      */
     public SistemaGestion() {
         this.almacen = new Almacen();
-        this.dashboard = new Dashboard(new VistaTextual());
+        this.dashboard = new Dashboard();
         this.cadenas = new CadenaMontaje[3];
         cadenas[0] = new CadenaMontaje("BiplazaDeportivo");
         cadenas[1] = new CadenaMontaje("Turismo");

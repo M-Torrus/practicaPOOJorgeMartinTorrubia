@@ -34,6 +34,6 @@ public class AdministradorSistema extends Trabajador {
      * La implementación completa se realiza en el Nivel 3.
      */
     public void restaurarSistema() {
-        // TODO: Nivel 3
+        // Para implementar en el nivel 3
     }
 }

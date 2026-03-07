@@ -34,6 +34,6 @@ public class GestorDePlanta extends Trabajador {
      * @param cadena La cadena de montaje a configurar.
      */
     public void configurarCadena(CadenaMontaje cadena) {
-        // TODO: Nivel 3
+        // Para implementar en el nivel 3
     }
 }

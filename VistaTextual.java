@@ -19,7 +19,7 @@ public class VistaTextual implements IVisualizacion {
      */
     @Override
     public void mostrar() {
-        // TODO: Nivel 3
+        // Para implementar en el nivel 3
     }
 
     /**
@@ -27,6 +27,6 @@ public class VistaTextual implements IVisualizacion {
      */
     @Override
     public void actualizar() {
-        // TODO: Nivel 3
+        // Para implementar en el nivel 3
     }
 }
