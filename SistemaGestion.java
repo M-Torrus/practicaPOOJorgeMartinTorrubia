@@ -22,7 +22,7 @@ public class SistemaGestion {
      * el planificador y la lista de trabajadores.
      */
     public SistemaGestion() {
-        this.almacen = new Almacen();
+        this.almacen = new AlmacenDatos();
         this.dashboard = new Dashboard();
         this.cadenas = new CadenaMontaje[3];
         cadenas[0] = new CadenaMontaje("BiplazaDeportivo");

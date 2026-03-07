@@ -1,7 +1,6 @@
 /**
- * Interfaz que define el contrato del almacén de la fábrica.
- * Desacopla el sistema de gestión de la implementación concreta del almacén,
- * permitiendo cambiar la implementación sin modificar el resto del sistema.
+ * Interfaz para comunicarse con el almacen de datos, desacopla el 
+ * sistema de gestión con la implementación concreta Almacen.
  *
  * @author Jorge Martín Torrubia
  * @version 1.0
@@ -9,17 +8,17 @@
 public interface IAlmacen {
 
     /**
-     * Añade un elemento (motor, tapicería, rueda o vehículo) al almacén.
+     * Añade un elemento al almacén.
      *
      * @param elemento Objeto a almacenar.
      */
     void añadir(Object elemento);
 
     /**
-     * Consulta el stock o los datos de un tipo de elemento del almacén.
+     * Consulta los datos de un tipo concreto de elementos del almacén.
      *
      * @param tipo Identificador del tipo de elemento a consultar.
-     * @return Objeto o colección con los datos consultados.
+     * @return Objeto con los datos consultados.
      */
     Object consultar(String tipo);
 

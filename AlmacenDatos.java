@@ -1,23 +1,22 @@
 import java.util.ArrayList;
 
 /**
- * Implementación concreta del almacén de la fábrica.
- * Almacena motores, tapicerías, ruedas y vehículos en listas independientes.
- * Implementa la interfaz IAlmacen para mantener el desacoplamiento con SistemaGestion.
+ * Clase AlmacenDatos de datos, se encarga de los datos de motores, tapicerías, 
+ * ruedas y vehículos en listas independientes, implementa la interfaz IAlmacen para mantener el desacoplamiento con SistemaGestion.
  *
  * @author Jorge Martín Torrubia
  * @version 1.0
  */
-public class Almacen implements IAlmacen {
+public class AlmacenDatos implements IAlmacen {
     private ArrayList<Motor> motores;
     private ArrayList<Tapiceria> tapicerias;
     private ArrayList<Rueda> ruedas;
     private ArrayList<Vehiculo> vehiculos;
 
     /**
-     * Constructor de Almacen. Inicializa las colecciones vacías.
+     * Constructor de la clase, inicializa las colecciones vacías.
      */
-    public Almacen() {
+    public AlmacenDatos() {
         motores = new ArrayList<>();
         tapicerias = new ArrayList<>();
         ruedas = new ArrayList<>();
